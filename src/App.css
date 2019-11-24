@@ -20,3 +20,8 @@
 .App-link {
   color: #09d3ac;
 }
+
+#quote-box {
+  background-color: orange;
+  padding: 120px 180px;
+}
