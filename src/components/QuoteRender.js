@@ -1,28 +1,24 @@
-import React, { Component } from "react";
-import "./QuoteRender.css";
+import './QuoteRender.css';
+
+import React, {Component} from 'react';
 
 export default class QuoteRender extends Component {
   state = {
-    quotes: ["first", "second", "third", "fourth", "fifth"],
-    text: "first load"
+    quotes: ['first', 'second', 'third', 'fourth', 'fifth'],
+    text: 'first load'
   };
   generateRandomQuote = () => {
     let quotes = this.state.quotes;
     var new_text = quotes[Math.floor(Math.random() * quotes.length)];
-    this.setState({
-      text: new_text
-    });
+    this.setState({text: new_text});
   };
 
   render() {
-    return (
-      <div>
-        <p id="text">{this.state.text}</p>
+    return (<div><p id = 'text'>{
+        this.state.text}</p>
         <p id="author">Some author</p>
-        <button onClick={this.generateRandomQuote} id="new-quote">
-          New Quote
-        </button>
-      </div>
-    );
+            <button onClick = {this.generateRandomQuote} id = 'new-quote'>New
+                Quote</button>
+      </div>);
   }
 }

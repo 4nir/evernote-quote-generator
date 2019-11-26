@@ -2,21 +2,25 @@ import React, {useState} from 'react';
 
 const QuoteRenderHook = () => {
   // array that stores quotes
-  const [quotes, setQuotes] = useState(['first', 'second', 'third', 'fourth', 'fifth']);
+  const [quotes, setQuotes] = useState([
+    {quote: 'The wise man has no wants.', author: 'Seneca'},
+     {quote: 'Productize yourself.', author: 'Naval'}, {quote: 'Know thy enemy.', author: 'Sun Tzu'}]
+    );
   // string that stores quote
-  const [quote, setQuote] = useState('first load from hooks');
+  const [quote, setQuote] = useState('Author goes here');
+  const [author, setAuthor] = useState('Quote goes here');
 
   const generateRandomQuote = () => {
-    let new_text = quotes[Math.floor(Math.random() * quotes.length)];
-    console.log('new_text: ', new_text);
-    setQuote(new_text);
+    let quote_object_new = quotes[Math.floor(Math.random() * quotes.length)];
+    setQuote(quote_object_new.quote);
+    setAuthor(quote_object_new.author)
   };
 
   return (
     <div>
       <div>
         <p id='text'>{quote}</p>
-        <p id="author">Some author</p>
+        <p id="author">{author}</p>
         <button onClick={generateRandomQuote} id='new-quote'>
           New Quote
         </button>
