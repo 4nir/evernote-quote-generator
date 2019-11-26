@@ -4,8 +4,9 @@ const QuoteRenderHook = () => {
   // array that stores quotes
   const [quotes, setQuotes] = useState([
     {quote: 'The wise man has no wants.', author: 'Seneca'},
-     {quote: 'Productize yourself.', author: 'Naval'}, {quote: 'Know thy enemy.', author: 'Sun Tzu'}]
-    );
+    {quote: 'Productize yourself.', author: 'Naval'},
+    {quote: 'Know thy enemy.', author: 'Sun Tzu'}
+  ]);
   // string that stores quote
   const [quote, setQuote] = useState('Author goes here');
   const [author, setAuthor] = useState('Quote goes here');
@@ -24,9 +25,11 @@ const QuoteRenderHook = () => {
         <button onClick={generateRandomQuote} id='new-quote'>
           New Quote
         </button>
+        {/* <a href='https://www.w3schools.com'>Visit W3Schools.com!</a>  */}
       </div>
     </div>
   );
-};
+}
+;
 
 export default QuoteRenderHook;
